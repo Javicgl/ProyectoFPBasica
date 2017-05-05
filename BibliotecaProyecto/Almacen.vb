@@ -4,5 +4,7 @@
     'añadirproducto
     'borrarproducto
     'mostrarproductos
-
+    Public Function añadirPRoducto() As String
+        Return ""
+    End Function
 End Class
