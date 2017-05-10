@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ProyectoFPBasico.Inicio
+            Me.MainForm = Global.ProyectoFPBasico.frmInicio
         End Sub
     End Class
 End Namespace

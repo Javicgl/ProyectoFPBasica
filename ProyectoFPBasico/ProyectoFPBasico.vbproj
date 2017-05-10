@@ -78,29 +78,35 @@
     <Compile Include="frmAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.vb">
+    <Compile Include="frmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.vb">
-      <DependentUpon>Inicio.vb</DependentUpon>
+    <Compile Include="frmInicio.Designer.vb">
+      <DependentUpon>frmInicio.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioSesion.Designer.vb">
-      <DependentUpon>InicioSesion.vb</DependentUpon>
+    <Compile Include="frmLogeo.Designer.vb">
+      <DependentUpon>frmLogeo.vb</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.vb">
+    <Compile Include="frmLogeo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Instrucciones.Designer.vb">
-      <DependentUpon>Instrucciones.vb</DependentUpon>
+    <Compile Include="frmInstrucciones.Designer.vb">
+      <DependentUpon>frmInstrucciones.vb</DependentUpon>
     </Compile>
-    <Compile Include="Instrucciones.vb">
+    <Compile Include="frmInstrucciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Juego.Designer.vb">
-      <DependentUpon>Juego.vb</DependentUpon>
+    <Compile Include="frmJuego.Designer.vb">
+      <DependentUpon>frmJuego.vb</DependentUpon>
     </Compile>
-    <Compile Include="Juego.vb">
+    <Compile Include="frmJuego.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReg.Designer.vb">
+      <DependentUpon>frmReg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReg.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -124,14 +130,17 @@
     <EmbeddedResource Include="frmAlmacen.resx">
       <DependentUpon>frmAlmacen.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.vb</DependentUpon>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InicioSesion.resx">
-      <DependentUpon>InicioSesion.vb</DependentUpon>
+    <EmbeddedResource Include="frmLogeo.resx">
+      <DependentUpon>frmLogeo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Juego.resx">
-      <DependentUpon>Juego.vb</DependentUpon>
+    <EmbeddedResource Include="frmJuego.resx">
+      <DependentUpon>frmJuego.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReg.resx">
+      <DependentUpon>frmReg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
