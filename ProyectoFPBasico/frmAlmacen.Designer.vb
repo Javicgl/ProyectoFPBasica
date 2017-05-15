@@ -24,12 +24,13 @@ Partial Class frmAlmacen
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Almacen
+        'frmAlmacen
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(761, 474)
-        Me.Name = "Almacen"
+        Me.ClientSize = New System.Drawing.Size(571, 385)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Name = "frmAlmacen"
         Me.Text = "Almacen"
         Me.ResumeLayout(False)
 
