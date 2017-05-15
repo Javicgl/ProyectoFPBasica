@@ -24,6 +24,7 @@ Public Class frmLogeo
             End If
             contador += 1
         Loop Until esUsuario = True OrElse reader.EndOfStream
+        reader.Close()
 
         If esAdmin Then
             'abrir la ventana de admin

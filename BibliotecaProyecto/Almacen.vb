@@ -1,5 +1,6 @@
 ﻿Public Class Almacen
     Public productos As New List(Of Producto)
+
     Public Function añadirProducto(prod As Producto) As String
         If String.IsNullOrWhiteSpace(prod.Nombre) Then
             Return "El producto debe tener un nombre válido"
@@ -14,6 +15,7 @@
         productos.Add(prod)
         Return prod.Cantidad & " unidades se han añadido del producto " & prod.Nombre
     End Function
+
     Public Function borrarProducto(prod As Producto) As String
         If Not Me.productos.Contains(prod) Then
             Return "El producto no se encuentra"
@@ -26,4 +28,10 @@
         productos.ElementAt(productos.IndexOf(prod)).Cantidad -= prod.Cantidad
         Return "Se han eliminado " & prod.Cantidad & " unidades del producto " & prod.Nombre
     End Function
+
+    Public Sub eliminarAlmacen()
+        For i = 0 To productos.Count() - 1
+            productos.RemoveAt(0)
+        Next
+    End Sub
 End Class

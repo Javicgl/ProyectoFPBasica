@@ -1,0 +1,11 @@
+﻿Pedidos:3
+1@
+Boligrafo,8
+Lapiz,5
+2@
+Tijera,20
+Lapiz,6
+3@
+Boligrafo,7
+Tijera,8
+Lapiz,13
