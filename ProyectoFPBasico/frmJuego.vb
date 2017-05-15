@@ -151,7 +151,7 @@ Public Class frmJuego
 
     Private Sub Juego_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Module1.lectura()
-        'Pedido
+        'Pedido.
         Dim aleatorio As Integer = rnd.Next(1, num)
         Dim nom As New List(Of String)
         Dim cant As New List(Of Integer)
