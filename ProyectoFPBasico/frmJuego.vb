@@ -26,6 +26,7 @@ Public Class frmJuego
             frmAlmacen.Controls.Add(miCantidadCarro)
             frmAlmacen.Controls.Add(miCantidadCarroImg)
         Next
+        aux = 50
         For i = 0 To prodsAlmacen.productos.Count - 1
             Dim miCantidadCarro As New Label
             Dim miCantidadCarroImg As New Label
@@ -39,6 +40,7 @@ Public Class frmJuego
             grbAlmacen.Controls.Add(miCantidadCarro)
             grbAlmacen.Controls.Add(miCantidadCarroImg)
         Next
+        aux = 50
         For i = 0 To prodsCarrito.productos.Count - 1
             Dim miCantidadCarro As New Label
             Dim miCantidadCarroImg As New Label
@@ -169,7 +171,7 @@ Public Class frmJuego
             btnImagen.Location = lblPedido.Location + espacio
             aux += 50
         Next
-
+        aux = 50
         'Productos
         'Leer productos, boli, tipex, lapiz, rotulador, goma, folio, grapadora, taladradora, calculadora, tijera
         For i = 0 To prodsAlmacen.productos.Count - 1
