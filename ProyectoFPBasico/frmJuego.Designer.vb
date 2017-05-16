@@ -31,6 +31,7 @@ Partial Class frmJuego
         Me.lblAlmacen = New System.Windows.Forms.Label()
         Me.lblCarrito = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnInstruccionesJ = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'grbPedido
@@ -121,17 +122,28 @@ Partial Class frmJuego
         '
         Me.btnSalir.Location = New System.Drawing.Point(502, 758)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(488, 131)
+        Me.btnSalir.Size = New System.Drawing.Size(246, 131)
         Me.btnSalir.TabIndex = 10
         Me.btnSalir.Text = "Salir del juego"
         Me.btnSalir.UseVisualStyleBackColor = True
+        '
+        'btnInstruccionesJ
+        '
+        Me.btnInstruccionesJ.Location = New System.Drawing.Point(830, 758)
+        Me.btnInstruccionesJ.Name = "btnInstruccionesJ"
+        Me.btnInstruccionesJ.Size = New System.Drawing.Size(246, 131)
+        Me.btnInstruccionesJ.TabIndex = 11
+        Me.btnInstruccionesJ.Text = "Instrucciones"
+        Me.btnInstruccionesJ.UseVisualStyleBackColor = True
         '
         'frmJuego
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(1599, 883)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnInstruccionesJ)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.lblCarrito)
         Me.Controls.Add(Me.lblAlmacen)
@@ -141,6 +153,7 @@ Partial Class frmJuego
         Me.Controls.Add(Me.grbAlmacen)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.grbPedido)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmJuego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -160,4 +173,5 @@ Partial Class frmJuego
     Friend WithEvents lblAlmacen As Label
     Friend WithEvents lblCarrito As Label
     Friend WithEvents btnSalir As Button
+    Friend WithEvents btnInstruccionesJ As Button
 End Class

@@ -34,7 +34,7 @@ Partial Class frmReg
         'txtContraseña
         '
         Me.txtContraseña.Location = New System.Drawing.Point(153, 115)
-        Me.txtContraseña.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtContraseña.Margin = New System.Windows.Forms.Padding(4)
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.Size = New System.Drawing.Size(185, 22)
         Me.txtContraseña.TabIndex = 1
@@ -42,7 +42,7 @@ Partial Class frmReg
         'txtUsuario
         '
         Me.txtUsuario.Location = New System.Drawing.Point(153, 47)
-        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtUsuario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(185, 22)
         Me.txtUsuario.TabIndex = 2
@@ -76,7 +76,7 @@ Partial Class frmReg
         'btnReg
         '
         Me.btnReg.Location = New System.Drawing.Point(100, 186)
-        Me.btnReg.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReg.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReg.Name = "btnReg"
         Me.btnReg.Size = New System.Drawing.Size(192, 34)
         Me.btnReg.TabIndex = 6
@@ -93,7 +93,7 @@ Partial Class frmReg
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.txtContraseña)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmReg"
         Me.Text = "frmReg"
         Me.ResumeLayout(False)

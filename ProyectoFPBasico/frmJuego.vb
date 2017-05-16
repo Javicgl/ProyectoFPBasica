@@ -10,7 +10,7 @@ Public Class frmJuego
     Dim strGuess As String
     Dim guess As Integer
     Dim aleatorio As Integer = rnd.Next(1, num + 1)
-    Dim espacio As New Size(35, 0)
+    Dim espacio As New Size(100, 0)
     Dim pedidoCorrecto As Integer
     Public Function mostrarLabels() As String
 
@@ -39,56 +39,64 @@ Public Class frmJuego
 
         For i = 0 To prodsAlmacen.productos.Count - 1
             Dim miCantidadCarro As New Label
-            Dim miCantidadCarroImg As New Label
+            Dim miCantidadCarroImg As New Button
+            miCantidadCarroImg.Enabled = False
             AddHandler miCantidadCarro.Click, AddressOf clickedProduct_Click
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
             aux += 50
             miCantidadCarro.Text = prodsAlmacen.productos(i).Nombre
-            miCantidadCarroImg.Image = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
+            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
             frmAlmacen.Controls.Add(miCantidadCarro)
             frmAlmacen.Controls.Add(miCantidadCarroImg)
         Next
         aux = 50
         For i = 0 To prodsAlmacen.productos.Count - 1
             Dim miCantidadCarro As New Label
-            Dim miCantidadCarroImg As New Label
+            Dim miCantidadCarroImg As New Button
+            miCantidadCarroImg.Enabled = False
             AddHandler miCantidadCarro.Click, AddressOf clickedProductCarro_Click
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
             aux += 50
             miCantidadCarro.Text = prodsAlmacen.productos(i).Nombre & "," & prodsAlmacen.productos(i).Cantidad
-            miCantidadCarroImg.Image = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
+            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
             grbAlmacen.Controls.Add(miCantidadCarro)
             grbAlmacen.Controls.Add(miCantidadCarroImg)
         Next
         aux = 50
         For i = 0 To prodsCarrito.productos.Count - 1
             Dim miCantidadCarro As New Label
-            Dim miCantidadCarroImg As New Label
+            Dim miCantidadCarroImg As New Button
+            miCantidadCarroImg.Enabled = False
             AddHandler miCantidadCarro.Click, AddressOf clickedCarrito_Click
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
             aux += 50
             miCantidadCarro.Text = prodsCarrito.productos(i).Nombre & "," & prodsCarrito.productos(i).Cantidad
-            miCantidadCarroImg.Image = prodsCarrito.productos(i).Img
+            miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
+            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
             grbCarrito.Controls.Add(miCantidadCarro)
             grbCarrito.Controls.Add(miCantidadCarroImg)
         Next
         aux = 50
         For i = 0 To prodsPedido.Item(aleatorio - 1).productos.Count - 1
             Dim lblPedido As New Label
-            Dim btnImagen As New Label
+            Dim miCantidadCarroImg As New Button
+            miCantidadCarroImg.Enabled = False
             lblPedido.Text = prodsPedido.Item(aleatorio - 1).productos(i).Nombre & "," & prodsPedido.Item(aleatorio - 1).productos(i).Cantidad
-            btnImagen.Image = prodsPedido.Item(aleatorio - 1).productos(i).Img
+            miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
+            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
             grbPedido.Controls.Add(lblPedido)
-            grbPedido.Controls.Add(btnImagen)
+            grbPedido.Controls.Add(miCantidadCarroImg)
             pos0 = New Point(15, aux)
             lblPedido.Location = pos0
-            btnImagen.Location = lblPedido.Location + espacio
+            miCantidadCarroImg.Location = lblPedido.Location + espacio
             aux += 50
         Next
         Return "Etiquetas actualizadas"
@@ -102,27 +110,32 @@ Public Class frmJuego
         'lógica from reserva to almacen
         Dim amount, auxI As Integer
         Dim strAmount As String
-        Dim añadido As Boolean = True
+        Dim añadido As Boolean
         Do
+            añadido = True
             strAmount = InputBox("¿Qué cantidad quieres añadir?", "Añadiendo al almacen")
-            If String.IsNullOrWhiteSpace(strAmount) OrElse Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 Then
+            If strAmount = "" Then
+                MessageBox.Show("No has introducido nada")
+            ElseIf Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 Then
                 añadido = False
                 MessageBox.Show("Introduce una cantidad válida")
             End If
         Loop Until añadido
-        For i = 0 To prodsAlmacen.productos.Count - 1
-            If prodsAlmacen.productos(i).Nombre = clicked.Text Then
-                auxI = i
+        If Not strAmount = "" Then
+            For i = 0 To prodsAlmacen.productos.Count - 1
+                If prodsAlmacen.productos(i).Nombre = clicked.Text Then
+                    auxI = i
+                End If
+            Next
+            strGuess = InputBox("Si en el almacen tenías " & prodsAlmacen.productos(auxI).Cantidad & " " & prodsAlmacen.productos(auxI).Nombre & " y le has añadido " & amount & "... ¿Cuántas unidades tienes en el almacén?")
+            If Not Integer.TryParse(strGuess, guess) OrElse guess <> prodsAlmacen.productos(auxI).Cantidad + amount Then
+                MessageBox.Show("Lo siento, el resultado no es correcto. ¡Inténtalo de nuevo!")
+            Else
+                prodsAlmacen.productos(auxI).Cantidad += amount
+                MessageBox.Show("¡ENHORABUENA, HAS ACERTADO!")
             End If
-        Next
-        strGuess = InputBox("Si en el almacen tenías " & prodsAlmacen.productos(auxI).Cantidad & " " & prodsAlmacen.productos(auxI).Nombre & " y le has añadido " & amount & "... ¿Cuántas unidades tienes en el almacén?")
-        If Not Integer.TryParse(strGuess, guess) OrElse guess <> prodsAlmacen.productos(auxI).Cantidad Then
-            MessageBox.Show("Lo siento, el resultado no es correcto. ¡Inténtalo de nuevo!")
-        Else
-            prodsAlmacen.productos(auxI).Cantidad += amount
-            MessageBox.Show("¡ENHORABUENA, HAS ACERTADO!")
+            mostrarLabels()
         End If
-        mostrarLabels()
     End Sub
 
     Private Sub clickedProductCarro_Click(sender As Object, e As EventArgs)
@@ -143,6 +156,7 @@ Public Class frmJuego
             añadido = True
             strAmount = InputBox("¿Qué cantidad quieres añadir?", "Añadiendo al carrito")
             If strAmount = "" Then
+                MessageBox.Show("No has introducido nada")
             ElseIf Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 OrElse amount > currentAmount Then
                 añadido = False
                 MessageBox.Show("Introduce una cantidad válida")
@@ -230,7 +244,7 @@ Public Class frmJuego
 
         For i = 0 To prodsCarrito.productos.Count - 1
             For j = 0 To prodsPedido.Item(aleatorio - 1).productos.Count - 1
-                If prodsPedido.Item(aleatorio - 1).productos(j).Nombre = prodsCarrito.productos(i).Nombre Then
+                If prodsPedido.Item(aleatorio - 1).productos.Contains(prodsCarrito.productos(i)) AndAlso prodsPedido.Item(aleatorio - 1).productos(j).Cantidad = prodsCarrito.productos(i).Cantidad Then
                     pedidoCorrecto += 1
                 End If
             Next
