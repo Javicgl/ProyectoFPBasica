@@ -1,3 +1,4 @@
 ﻿Boligrafo
 Tijera
 Lapiz
+Goma
