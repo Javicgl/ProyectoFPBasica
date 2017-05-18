@@ -103,12 +103,6 @@
     <Compile Include="frmJuego.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReg.Designer.vb">
-      <DependentUpon>frmReg.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmReg.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -133,14 +127,14 @@
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInstrucciones.resx">
+      <DependentUpon>frmInstrucciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogeo.resx">
       <DependentUpon>frmLogeo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmJuego.resx">
       <DependentUpon>frmJuego.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReg.resx">
-      <DependentUpon>frmReg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -169,9 +163,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Documentos\Imagenes\Boligrafo.jpg" />
-    <Content Include="Documentos\Imagenes\Lapiz.jpg" />
-    <Content Include="Documentos\Imagenes\Tijera.jpg" />
+    <Content Include="Documentos\Imagenes\Boligrafo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Documentos\Imagenes\Lapiz.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Documentos\Imagenes\Tijera.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Documentos\Pedidos.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

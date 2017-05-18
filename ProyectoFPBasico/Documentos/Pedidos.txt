@@ -9,5 +9,3 @@ Lapiz,6
 Boligrafo,7
 Tijera,8
 Lapiz,13
-4@
-Boligrafo,4

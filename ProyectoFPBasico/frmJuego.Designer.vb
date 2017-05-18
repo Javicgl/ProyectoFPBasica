@@ -77,7 +77,7 @@ Partial Class frmJuego
         Me.grbAlmacen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grbAlmacen.Name = "grbAlmacen"
         Me.grbAlmacen.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.grbAlmacen.Size = New System.Drawing.Size(798, 608)
+        Me.grbAlmacen.Size = New System.Drawing.Size(787, 608)
         Me.grbAlmacen.TabIndex = 5
         Me.grbAlmacen.TabStop = False
         '
@@ -120,6 +120,7 @@ Partial Class frmJuego
         '
         'btnSalir
         '
+        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnSalir.Location = New System.Drawing.Point(502, 758)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(246, 131)

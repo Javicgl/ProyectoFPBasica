@@ -13,4 +13,9 @@
         btnCrear.Enabled = False
         btnJugar.Enabled = False
     End Sub
+
+    Private Sub btnIns_Click(sender As Object, e As EventArgs) Handles btnIns.Click
+        frmInstrucciones.Show()
+        Me.btnIns.Enabled = False
+    End Sub
 End Class

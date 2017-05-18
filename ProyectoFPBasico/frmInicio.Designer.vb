@@ -77,9 +77,10 @@ Partial Class frmInicio
         Me.Controls.Add(Me.btnIns)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnJugar)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmInicio"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
 
     End Sub

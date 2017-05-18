@@ -3,7 +3,7 @@
 Public Class frmLogeo
 
     Private Sub btnInicioSesion_Click(sender As Object, e As EventArgs) Handles btnInicioSesion.Click
-        Dim reader As New StreamReader("Usuarios.txt")
+        Dim reader As New StreamReader("Documentos\Usuarios.txt")
         If btnInicioSesion.Text = "Regístrate" Then
             Dim usuarios As New List(Of String)
 

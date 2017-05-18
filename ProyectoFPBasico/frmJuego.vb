@@ -234,11 +234,15 @@ Public Class frmJuego
         Dim cant As New List(Of Integer)
         Dim aux As Integer = 50
         mostrarLabels()
-
-        'Productos
-        'Leer productos, boli, tipex, lapiz, rotulador, goma, folio, grapadora, taladradora, calculadora, tijera
     End Sub
 
+    'Típex
+    'Rotulador
+    'Goma
+    'Folio
+    'Grapadora
+    'Taladradora
+    'Calculadora
     Private Sub btnEnviar_Click(sender As Object, e As EventArgs) Handles Button2.Click
         pedidoCorrecto = 0
 

@@ -3,7 +3,6 @@ Imports System.Drawing
 
 Public Class Producto : Implements IEquatable(Of Producto)
     Public Property Nombre As String
-
     Public Property Img As Image
 
     Private _Cantidad As Integer
@@ -19,7 +18,7 @@ Public Class Producto : Implements IEquatable(Of Producto)
     Public Sub New(nom As String, cant As Integer)
         Me.Nombre = nom
         Me.Cantidad = cant
-        Me.Img = Image.FromFile(My.Application.Info.DirectoryPath & "\Imagenes\" & nom & ".jpg")
+        Me.Img = Image.FromFile(My.Application.Info.DirectoryPath & "\Documentos\Imagenes\" & nom & ".jpg")
     End Sub
 
     Public Sub New(nom As String)
