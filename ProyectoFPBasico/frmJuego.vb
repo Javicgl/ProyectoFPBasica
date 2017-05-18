@@ -80,7 +80,7 @@ Public Class frmJuego
             aux += 50
             miCantidadCarro.Text = prodsCarrito.productos(i).Nombre & "," & prodsCarrito.productos(i).Cantidad
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
-            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.BackgroundImage = prodsCarrito.productos(i).Img
             grbCarrito.Controls.Add(miCantidadCarro)
             grbCarrito.Controls.Add(miCantidadCarroImg)
         Next
@@ -91,7 +91,7 @@ Public Class frmJuego
             miCantidadCarroImg.Enabled = False
             lblPedido.Text = prodsPedido.Item(aleatorio - 1).productos(i).Nombre & "," & prodsPedido.Item(aleatorio - 1).productos(i).Cantidad
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
-            miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.BackgroundImage = prodsPedido.Item(aleatorio - 1).productos(i).Img
             grbPedido.Controls.Add(lblPedido)
             grbPedido.Controls.Add(miCantidadCarroImg)
             pos0 = New Point(15, aux)
@@ -177,7 +177,7 @@ Public Class frmJuego
                     prodsCarrito.añadirProducto(New Producto(clickedCarro.Text.Split(",")(0), amount))
                 End If
                 prodsAlmacen.productos(auxi).Cantidad -= amount
-                MessageBox.Show("¡ENHORABUENA, HAS ACERTADO!")
+                MessageBox.Show("¡Has acertado la cuenta!")
             End If
             mostrarLabels()
         End If
