@@ -9,8 +9,8 @@ Public Class frmJuego
     Dim rnd As New Random
     Dim strGuess As String
     Dim guess As Integer
-    Dim aleatorio As Integer = rnd.Next(1, num + 1)
-    Dim espacio As New Size(100, 0)
+    Dim aleatorio As Integer = rnd.Next(1, totalPedidos() + 1)
+    Dim espacio As New Size(150, 0)
     Dim pedidoCorrecto As Integer
     Public Function mostrarLabels() As String
 
@@ -30,7 +30,7 @@ Public Class frmJuego
             End If
         End If
 
-        Dim aux As Integer = 50
+        Dim aux As Integer = 25
         generado = True
         grbAlmacen.Controls.Clear()
         grbCarrito.Controls.Clear()
@@ -45,10 +45,12 @@ Public Class frmJuego
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
-            aux += 50
+            aux += 65
             miCantidadCarro.Text = prodsAlmacen.productos(i).Nombre
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
             miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.Width = 80
+            miCantidadCarroImg.Height = 50
             frmAlmacen.Controls.Add(miCantidadCarro)
             frmAlmacen.Controls.Add(miCantidadCarroImg)
         Next
@@ -61,10 +63,13 @@ Public Class frmJuego
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
-            aux += 50
+            aux += 65
+            miCantidadCarro.AutoSize = True
             miCantidadCarro.Text = prodsAlmacen.productos(i).Nombre & "," & prodsAlmacen.productos(i).Cantidad
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
             miCantidadCarroImg.BackgroundImage = prodsAlmacen.productos(i).Img
+            miCantidadCarroImg.Width = 80
+            miCantidadCarroImg.Height = 50
             grbAlmacen.Controls.Add(miCantidadCarro)
             grbAlmacen.Controls.Add(miCantidadCarroImg)
         Next
@@ -77,10 +82,13 @@ Public Class frmJuego
             pos0 = New Point(15, aux)
             miCantidadCarro.Location = pos0
             miCantidadCarroImg.Location = miCantidadCarro.Location + espacio
-            aux += 50
+            aux += 65
+            miCantidadCarro.AutoSize = True
             miCantidadCarro.Text = prodsCarrito.productos(i).Nombre & "," & prodsCarrito.productos(i).Cantidad
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
             miCantidadCarroImg.BackgroundImage = prodsCarrito.productos(i).Img
+            miCantidadCarroImg.Width = 80
+            miCantidadCarroImg.Height = 50
             grbCarrito.Controls.Add(miCantidadCarro)
             grbCarrito.Controls.Add(miCantidadCarroImg)
         Next
@@ -92,18 +100,22 @@ Public Class frmJuego
             lblPedido.Text = prodsPedido.Item(aleatorio - 1).productos(i).Nombre & "," & prodsPedido.Item(aleatorio - 1).productos(i).Cantidad
             miCantidadCarroImg.BackgroundImageLayout = ImageLayout.Stretch
             miCantidadCarroImg.BackgroundImage = prodsPedido.Item(aleatorio - 1).productos(i).Img
-            grbPedido.Controls.Add(lblPedido)
-            grbPedido.Controls.Add(miCantidadCarroImg)
             pos0 = New Point(15, aux)
             lblPedido.Location = pos0
             miCantidadCarroImg.Location = lblPedido.Location + espacio
-            aux += 50
+            aux += 65
+            lblPedido.AutoSize = True
+            miCantidadCarroImg.Width = 80
+            miCantidadCarroImg.Height = 50
+            grbPedido.Controls.Add(lblPedido)
+            grbPedido.Controls.Add(miCantidadCarroImg)
         Next
         Return "Etiquetas actualizadas"
     End Function
     Private Sub btnVerAlmacen_Click(sender As Object, e As EventArgs) Handles btnReservas.Click
         frmAlmacen.Show()
         mostrarLabels()
+        activarBotonesJuego(False)
     End Sub
     Private Sub clickedProduct_Click(sender As Object, e As EventArgs)
         Dim clicked As Label = TryCast(sender, Label)
@@ -189,7 +201,8 @@ Public Class frmJuego
         Dim clickedCarro As Label = TryCast(sender, Label)
         Dim currentAmount As Integer = CInt(clickedCarro.Text.Split(",")(1))
         Dim producto As String = clickedCarro.Text.Split(",")(0)
-        Dim strAmount, auxI As String
+        Dim strAmount As String
+        Dim auxI As Integer = 0
         Dim amount As Integer
         Dim añadido As Boolean = True
 
@@ -210,7 +223,7 @@ Public Class frmJuego
 
 
 
-        strGuess = InputBox("Si en el carrito tenías " & prodsCarrito.productos(auxI).Cantidad & " " & prodsAlmacen.productos(auxI).Nombre & " y has devuelto al almacén " & amount & "... ¿Cuántas unidades tienes en el carrito?")
+        strGuess = InputBox("Si en el carrito tenías " & prodsCarrito.productos(auxI).Cantidad & " " & prodsCarrito.productos(auxI).Nombre & " y has devuelto al almacén " & amount & "... ¿Cuántas unidades tienes en el carrito?")
         If Not Integer.TryParse(strGuess, guess) OrElse guess <> prodsCarrito.productos(auxI).Cantidad - amount Then
             MessageBox.Show("Lo siento, el resultado no es correcto. ¡Inténtalo de nuevo!")
         Else
@@ -228,12 +241,10 @@ Public Class frmJuego
 
     Private Sub Juego_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Module1.lectura()
-        'Pedido
-
         Dim nom As New List(Of String)
         Dim cant As New List(Of Integer)
         Dim aux As Integer = 50
-        mostrarLabels()
+        If found Then mostrarLabels()
     End Sub
 
     'Típex
@@ -287,5 +298,10 @@ Public Class frmJuego
             frmInicio.Close()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub btnInstruccionesJ_Click(sender As Object, e As EventArgs) Handles btnInstruccionesJ.Click
+        frmInstrucciones.Show()
+        activarBotonesJuego(False)
     End Sub
 End Class

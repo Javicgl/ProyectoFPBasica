@@ -22,6 +22,7 @@ Partial Class frmInicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInicio))
         Me.btnJugar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnIns = New System.Windows.Forms.Button()
@@ -30,48 +31,57 @@ Partial Class frmInicio
         '
         'btnJugar
         '
-        Me.btnJugar.Location = New System.Drawing.Point(395, 286)
+        Me.btnJugar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnJugar.Font = New System.Drawing.Font("Arial Unicode MS", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnJugar.Location = New System.Drawing.Point(388, 289)
         Me.btnJugar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnJugar.Name = "btnJugar"
         Me.btnJugar.Size = New System.Drawing.Size(652, 277)
         Me.btnJugar.TabIndex = 0
-        Me.btnJugar.Text = "Jugar"
-        Me.btnJugar.UseVisualStyleBackColor = True
+        Me.btnJugar.Text = "JUGAR"
+        Me.btnJugar.UseVisualStyleBackColor = False
         '
         'btnCrear
         '
+        Me.btnCrear.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCrear.Font = New System.Drawing.Font("Arial Unicode MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCrear.Location = New System.Drawing.Point(156, 60)
         Me.btnCrear.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(204, 73)
+        Me.btnCrear.Size = New System.Drawing.Size(257, 119)
         Me.btnCrear.TabIndex = 1
-        Me.btnCrear.Text = "Crear cuenta"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.btnCrear.Text = "CREAR CUENTA"
+        Me.btnCrear.UseVisualStyleBackColor = False
         '
         'btnIns
         '
-        Me.btnIns.Location = New System.Drawing.Point(621, 60)
+        Me.btnIns.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnIns.Font = New System.Drawing.Font("Arial Unicode MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIns.Location = New System.Drawing.Point(604, 61)
         Me.btnIns.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnIns.Name = "btnIns"
-        Me.btnIns.Size = New System.Drawing.Size(204, 73)
+        Me.btnIns.Size = New System.Drawing.Size(257, 119)
         Me.btnIns.TabIndex = 2
-        Me.btnIns.Text = "Instrucciones"
-        Me.btnIns.UseVisualStyleBackColor = True
+        Me.btnIns.Text = "INSTRUCCIONES"
+        Me.btnIns.UseVisualStyleBackColor = False
         '
         'btnRanking
         '
-        Me.btnRanking.Location = New System.Drawing.Point(1160, 60)
+        Me.btnRanking.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnRanking.Font = New System.Drawing.Font("Arial Unicode MS", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRanking.Location = New System.Drawing.Point(1058, 60)
         Me.btnRanking.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnRanking.Name = "btnRanking"
-        Me.btnRanking.Size = New System.Drawing.Size(204, 73)
+        Me.btnRanking.Size = New System.Drawing.Size(257, 118)
         Me.btnRanking.TabIndex = 3
-        Me.btnRanking.Text = "Ranking"
-        Me.btnRanking.UseVisualStyleBackColor = True
+        Me.btnRanking.Text = "RANKING"
+        Me.btnRanking.UseVisualStyleBackColor = False
         '
         'frmInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(1498, 658)
         Me.Controls.Add(Me.btnRanking)
         Me.Controls.Add(Me.btnIns)

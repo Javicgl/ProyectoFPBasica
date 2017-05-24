@@ -15,7 +15,14 @@
     End Sub
 
     Private Sub btnIns_Click(sender As Object, e As EventArgs) Handles btnIns.Click
-        frmInstrucciones.Show()
+        Dim inst As New frmInstrucciones
+        inst.Show()
         Me.btnIns.Enabled = False
+    End Sub
+
+    Private Sub btnRanking_Click(sender As Object, e As EventArgs) Handles btnRanking.Click
+        Dim rank As New frmRanking
+        rank.Show()
+        Me.btnRanking.Enabled = False
     End Sub
 End Class

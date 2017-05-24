@@ -1,3 +1,10 @@
 ﻿Boligrafo
 Tijera
 Lapiz
+Tipex
+Rotulador
+Goma
+Folio
+Grapadora
+Taladradora
+Calculadora
