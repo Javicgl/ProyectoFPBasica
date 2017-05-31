@@ -96,13 +96,13 @@ Partial Class frmJuego
         '
         Me.btnReservas.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnReservas.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnReservas.Font = New System.Drawing.Font("Arial Unicode MS", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReservas.Font = New System.Drawing.Font("Arial Unicode MS", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReservas.Location = New System.Drawing.Point(674, 778)
         Me.btnReservas.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReservas.Name = "btnReservas"
         Me.btnReservas.Size = New System.Drawing.Size(253, 47)
         Me.btnReservas.TabIndex = 6
-        Me.btnReservas.Text = "VER RESERVAS"
+        Me.btnReservas.Text = "AÑADIR EXISTENCIAS"
         Me.btnReservas.UseVisualStyleBackColor = False
         '
         'btnSalir
@@ -147,6 +147,8 @@ Partial Class frmJuego
         Me.Controls.Add(Me.grbPedido)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmJuego"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Juego"

@@ -125,12 +125,15 @@ Public Class frmJuego
         Dim añadido As Boolean
         Do
             añadido = True
-            strAmount = InputBox("¿Qué cantidad quieres añadir?", "Añadiendo al almacen")
+            strAmount = InputBox("¿Qué cantidad de " & clicked.Text.Split(",")(0) & " quieres añadir?", "Añadiendo al almacen")
             If strAmount = "" Then
                 MessageBox.Show("No has introducido nada")
             ElseIf Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 Then
                 añadido = False
                 MessageBox.Show("Introduce una cantidad válida")
+            ElseIf strAmount > 200 Then
+                añadido = False
+                MessageBox.Show("Solo puedes añadir un máximo de 200 unidades.")
             End If
         Loop Until añadido
         If Not strAmount = "" Then
@@ -166,7 +169,7 @@ Public Class frmJuego
 
         Do
             añadido = True
-            strAmount = InputBox("¿Qué cantidad quieres añadir?", "Añadiendo al carrito")
+            strAmount = InputBox("¿Qué cantidad de " & clickedCarro.Text.Split(",")(0) & " quieres añadir?", "Añadiendo al carrito")
             If strAmount = "" Then
                 MessageBox.Show("No has introducido nada")
             ElseIf Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 OrElse amount > currentAmount Then
@@ -214,32 +217,37 @@ Public Class frmJuego
         Next
         Do
             añadido = True
-            strAmount = InputBox("¿Qué cantidad quieres devolver al almacén?", "Devolviendo al almacén")
-            If Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 OrElse amount > currentAmount Then
+            strAmount = InputBox("¿Qué cantidad de " & clickedCarro.Text.Split(",")(0) & " quieres devolver al almacén?", "Devolviendo al almacén")
+            If strAmount = "" Then
+                MessageBox.Show("No has introducido nada.")
+                añadido = False
+            ElseIf Not Integer.TryParse(strAmount, amount) OrElse amount <= 0 OrElse amount > currentAmount Then
                 añadido = False
                 MessageBox.Show("Introduce una cantidad válida")
+                strAmount = ""
             End If
-        Loop Until añadido
+        Loop Until Not añadido
 
-
-
-        strGuess = InputBox("Si en el carrito tenías " & prodsCarrito.productos(auxI).Cantidad & " " & prodsCarrito.productos(auxI).Nombre & " y has devuelto al almacén " & amount & "... ¿Cuántas unidades tienes en el carrito?")
-        If Not Integer.TryParse(strGuess, guess) OrElse guess <> prodsCarrito.productos(auxI).Cantidad - amount Then
-            MessageBox.Show("Lo siento, el resultado no es correcto. ¡Inténtalo de nuevo!")
-        Else
-            For i = 0 To prodsAlmacen.productos.Count - 1
-                If prodsAlmacen.productos(i).Nombre = clickedCarro.Text.Split(",")(0) Then
-                    prodsAlmacen.productos(i).Cantidad += amount
-                    prodsCarrito.productos(auxI).Cantidad -= amount
-                End If
-            Next
-            MessageBox.Show("¡ENHORABUENA, HAS ACERTADO!")
+        If Not strAmount = "" Then
+            strGuess = InputBox("Si en el carrito tenías " & prodsCarrito.productos(auxI).Cantidad & " " & prodsCarrito.productos(auxI).Nombre & " y has devuelto al almacén " & amount & "... ¿Cuántas unidades tienes en el carrito?")
+            If Not Integer.TryParse(strGuess, guess) OrElse guess <> prodsCarrito.productos(auxI).Cantidad - amount Then
+                MessageBox.Show("Lo siento, el resultado no es correcto. ¡Inténtalo de nuevo!")
+            Else
+                For i = 0 To prodsAlmacen.productos.Count - 1
+                    If prodsAlmacen.productos(i).Nombre = clickedCarro.Text.Split(",")(0) Then
+                        prodsAlmacen.productos(i).Cantidad += amount
+                        prodsCarrito.productos(auxI).Cantidad -= amount
+                    End If
+                Next
+                MessageBox.Show("¡ENHORABUENA, HAS ACERTADO!")
+            End If
+            mostrarLabels()
         End If
-        mostrarLabels()
         'from carrito to almacen
     End Sub
 
     Private Sub Juego_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DoubleBuffered = True
         Module1.lectura()
         Dim nom As New List(Of String)
         Dim cant As New List(Of Integer)

@@ -25,4 +25,12 @@
         rank.Show()
         Me.btnRanking.Enabled = False
     End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub frmInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DoubleBuffered = True
+    End Sub
 End Class

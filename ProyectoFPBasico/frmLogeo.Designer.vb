@@ -28,6 +28,7 @@ Partial Class frmLogeo
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.btnInicioSesion = New System.Windows.Forms.Button()
+        Me.btnVolver = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -37,7 +38,7 @@ Partial Class frmLogeo
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(86, 35)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Usuario"
+        Me.Label1.Text = "Usuario/a"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
@@ -65,19 +66,31 @@ Partial Class frmLogeo
         Me.txtContraseña.Location = New System.Drawing.Point(165, 99)
         Me.txtContraseña.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtContraseña.Name = "txtContraseña"
+        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContraseña.Size = New System.Drawing.Size(153, 22)
         Me.txtContraseña.TabIndex = 4
         '
         'btnInicioSesion
         '
         Me.btnInicioSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btnInicioSesion.Location = New System.Drawing.Point(72, 166)
+        Me.btnInicioSesion.Location = New System.Drawing.Point(49, 156)
         Me.btnInicioSesion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInicioSesion.Name = "btnInicioSesion"
-        Me.btnInicioSesion.Size = New System.Drawing.Size(246, 42)
+        Me.btnInicioSesion.Size = New System.Drawing.Size(160, 72)
         Me.btnInicioSesion.TabIndex = 5
         Me.btnInicioSesion.Text = "Iniciar sesión"
         Me.btnInicioSesion.UseVisualStyleBackColor = False
+        '
+        'btnVolver
+        '
+        Me.btnVolver.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnVolver.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnVolver.Location = New System.Drawing.Point(230, 169)
+        Me.btnVolver.Name = "btnVolver"
+        Me.btnVolver.Size = New System.Drawing.Size(117, 44)
+        Me.btnVolver.TabIndex = 6
+        Me.btnVolver.Text = "Volver"
+        Me.btnVolver.UseVisualStyleBackColor = False
         '
         'frmLogeo
         '
@@ -85,7 +98,9 @@ Partial Class frmLogeo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.CancelButton = Me.btnVolver
         Me.ClientSize = New System.Drawing.Size(406, 251)
+        Me.Controls.Add(Me.btnVolver)
         Me.Controls.Add(Me.btnInicioSesion)
         Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtUsuario)
@@ -93,6 +108,8 @@ Partial Class frmLogeo
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmLogeo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
@@ -106,4 +123,5 @@ Partial Class frmLogeo
     Friend WithEvents txtUsuario As TextBox
     Friend WithEvents txtContraseña As TextBox
     Friend WithEvents btnInicioSesion As Button
+    Friend WithEvents btnVolver As Button
 End Class

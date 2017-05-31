@@ -27,13 +27,15 @@ Partial Class frmInicio
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnIns = New System.Windows.Forms.Button()
         Me.btnRanking = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnJugar
         '
         Me.btnJugar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnJugar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnJugar.Font = New System.Drawing.Font("Arial Unicode MS", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnJugar.Location = New System.Drawing.Point(388, 289)
+        Me.btnJugar.Location = New System.Drawing.Point(187, 301)
         Me.btnJugar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnJugar.Name = "btnJugar"
         Me.btnJugar.Size = New System.Drawing.Size(652, 277)
@@ -77,18 +79,34 @@ Partial Class frmInicio
         Me.btnRanking.Text = "RANKING"
         Me.btnRanking.UseVisualStyleBackColor = False
         '
+        'btnSalir
+        '
+        Me.btnSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnSalir.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnSalir.Font = New System.Drawing.Font("Arial Unicode MS", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(989, 362)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(338, 147)
+        Me.btnSalir.TabIndex = 4
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
         'frmInicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.CancelButton = Me.btnSalir
         Me.ClientSize = New System.Drawing.Size(1498, 658)
+        Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnRanking)
         Me.Controls.Add(Me.btnIns)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnJugar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmInicio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
@@ -99,4 +117,5 @@ Partial Class frmInicio
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnIns As Button
     Friend WithEvents btnRanking As Button
+    Friend WithEvents btnSalir As Button
 End Class

@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Label1.Text" xml:space="preserve">
-    <value>¡BIENVENIDO A NUESTRO JUEGO! Creado por Miguel Sada, Javier Conde, David Pérez y Andreas Marín.
+    <value>¡BIENVENIDO/A A NUESTRO JUEGO! Creado por los alumnos de 1ºDAM: Miguel Sada, Javier Conde, David Pérez y Andreas Marín.
+Con la colaboración de los profesores: María Martin, Ander Frago, Luis Agero.
 
 Necesitas una cuenta para poder jugar. Si no dispones de una, pulsa en el botón 'CREAR CUENTA' e introduce tu nombre y contraseña.
 Una vez dispongas de cuenta, puedes hacer click en 'Jugar' y comenzar.

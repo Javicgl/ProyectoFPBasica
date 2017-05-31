@@ -53,11 +53,14 @@ Public Class frmLogeo
 
                 If esAdmin Then
                     'abrir la ventana de admin
+                ElseIf pedidosUsados.Count >= totalPedidos Then
+                    MessageBox.Show("Ya has jugado con todos los pedidos.")
+                    Application.Exit()
                 ElseIf esUsuario Then
                     Me.Close()
                     juego.Show()
                 Else
-                    MessageBox.Show("El usuario no existe.")
+                    MessageBox.Show("El usuario o la contraseña se han introducido mal.")
                 End If
             End If
         Catch ex As System.IO.IOException
@@ -69,4 +72,22 @@ Public Class frmLogeo
         frmInicio.btnCrear.Enabled = True
         frmInicio.btnJugar.Enabled = True
     End Sub
+
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Me.Close()
+    End Sub
+
+    Private Sub frmLogeo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.DoubleBuffered = True
+    End Sub
+
+    'Private Sub frmLogeo_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+    '    If e.KeyCode = Keys.Escape Then
+    '        Me.Close()
+    '    End If
+    'End Sub
+
+    'Private Sub frmLogeo_Load(sender As Object, e As EventArgs) Handles Me.Load
+    '    Me.KeyPreview = True 'Considerar teclas por defecto para el formulario.
+    'End Sub
 End Class
